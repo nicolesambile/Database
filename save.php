@@ -2,14 +2,16 @@
 require('./connection.php');
 
 if(isset($_POST['save'])){
-$firstname = $_POST ['FN'];
-$middlename = $_POST ['MN'];
-$lastname = $_POST ['LN'];
+$fullname = $_POST ['FN'];
+$birthday = $_POST ['BDAY'];
+$address = $_POST ['ADDRESS'];
+$email = $_POST ['EMAIL'];
+$password = $_POST ['PASSWORD'];
 
-$querryCreate = "INSERT INTO bsistbl VALUES (null, '$firstname', '$middlename', '$lastname')";
-$sqlCreate = mysqli_query ($connection, $querryCreate);
+$querryCreate = "INSERT INTO bsistbl1 VALUES ('$fullname', '$birthday', '$address', '$email', '$password')";
+$sqlCreate = mysqli_query($connection, $querryCreate);
 
-echo '<script>alert("Successfully Created!")</script>';
+echo '<script>alert("Successfully Save!")</script>';
 
 }
 
